@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.1 fetch()</title>
+</head>
+
+<body>
+    <img src="" alt="" id="waste" width="50%">
+
+    <script>
+
+    async function catchWaste(){
+      
+    }
+
+        fetch('waste.jpg').then(response => {
+            console.log(response)
+            return response.blob();
+        })
+            .then(blob => {
+                console.log(blob)
+                document.getElementById('waste').src = URL.createObjectURL(blob);
+            }).catch(error => {
+              console.log('error')
+              console.error(error);
+            });
+    </script>
+
+</body>
+
+</html>
