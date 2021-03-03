@@ -14,10 +14,10 @@ Euniece Harris
 eureka.eunieceharis.com 
 
 <h3><i>Inspirations References</i></h3>
-- The Principle of Commitment and Behavioral Consistency | Nielsen Norman Group
-- Use Design Thinking to Build Commitment to a New Idea | Harvard Business Review
-- Robert B. Cialdini, Influence: Science and Practice | Book
-- Dalarna Media Library | https://www.adept.dk/project/dma-library 
-- P5.js Sketchbook - Georges Benainous | https://georgesb.com/sketchbook/index.html
+- The Principle of Commitment and Behavioral Consistency | Nielsen Norman Group<br>
+- Use Design Thinking to Build Commitment to a New Idea | Harvard Business Review<br>
+- Robert B. Cialdini, Influence: Science and Practice | Book<br>
+- Dalarna Media Library | https://www.adept.dk/project/dma-library<br> 
+- P5.js Sketchbook - Georges Benainous | https://georgesb.com/sketchbook/index.html<br>
 
 
