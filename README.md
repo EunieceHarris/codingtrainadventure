@@ -1,7 +1,3 @@
-//These files are a documentation of me practicing various JavaScript/P5 concepts in Processing
-// by Euniece Harris
-// learning how to to code by The Coding Train
-// https://www.youtube.com/watch?v=-e5h4IGKZRY&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=10
-
-# codingtrainadventure
-codingtrainpractice
+In the effor to learn p5.js, this is a collection of various coding activities. All made possible by Daniel Shiffman/Coding Rainbow videos on p5.js.
+Link to Playlist:  https://www.youtube.com/playlist?list=PLglp04UYZK_PrN6xWo_nJ-8kzyXDyFUwi
+Code by : Euniece Harris
