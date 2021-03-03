@@ -13,7 +13,7 @@ The site is ever-changing so one week it may have one shelf then the next it's n
 Euniece Harris
 eureka.eunieceharis.com 
 
-<h3><i>Inspirations References</i></h3>
+<h3><i>Inspirations & References</i></h3>
 - The Principle of Commitment and Behavioral Consistency | Nielsen Norman Group<br>
 - Use Design Thinking to Build Commitment to a New Idea | Harvard Business Review<br>
 - Robert B. Cialdini, Influence: Science and Practice | Book<br>
