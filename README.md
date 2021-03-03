@@ -10,6 +10,14 @@ You'll also notice that the site is written primarily in Swedish. In addition to
 
 The site is ever-changing so one week it may have one shelf then the next it's not. I imagine during this journey, once I learn methods in maintaining a website, both on the front-end and back-end, redundant tasks will be accmplished dynamically. What the site might look like then, I can only imagine...
 
-- Euniece Harris
+Euniece Harris
+eureka.eunieceharis.com 
+
+<i>Inspirations References</i>
+- The Principle of Commitment and Behavioral Consistency | Nielsen Norman Group
+- Use Design Thinking to Build Commitment to a New Idea | Harvard Business Review
+- Robert B. Cialdini, Influence: Science and Practice | Book
+- Dalarna Media Library | https://www.adept.dk/project/dma-library 
+- P5.js Sketchbook - Georges Benainous | https://georgesb.com/sketchbook/index.html
 
 
