@@ -1,0 +1,189 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+\
+<head>\
+  <meta charset="UTF-8">\
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">\
+  <title>Tabular Data</title>\
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>\
+\
+  </script>\
+</head>\
+\
+<body>\
+\
+  <canvas id="momaNationalities" width="400px" height="150px"></canvas>\
+  <canvas id="nordicNationalities" width="400px" height="150px"></canvas>\
+\
+  <script>\
+\
+  let momaArray = [];\
+  let nordicArray = [];\
+  //  momaChart();\
+    nordicChart();\
+\
+    //   async function momaChart()\{\
+    //   await getData();\
+    //   const ctx = document.getElementById('momaNationalities').getContext('2d');\
+    //   const myChart = new Chart(ctx, \{\
+    //\
+    //\
+    //     type: 'doughnut',\
+    //     data: \{\
+    //       labels: ['Nordic Artists', 'Non-Nordic Artists'],\
+    //       datasets: [\{\
+    //         label: 'Nordic Artists at the MoMa',\
+    //         data: momaArray,\
+    //         backgroundColor: [\
+    //           'rgba(255, 99, 132, 0.2)',\
+    //           'rgba(54, 162, 235, 0.2)',\
+    //           'rgba(255, 206, 86, 0.2)',\
+    //           'rgba(75, 192, 192, 0.2)',\
+    //           'rgba(153, 102, 255, 0.2)',\
+    //           'rgba(255, 159, 64, 0.2)'\
+    //         ],\
+    //         borderColor: [\
+    //           'rgba(255, 99, 132, 1)',\
+    //           'rgba(54, 162, 235, 1)',\
+    //           'rgba(255, 206, 86, 1)',\
+    //           'rgba(75, 192, 192, 1)',\
+    //           'rgba(153, 102, 255, 1)',\
+    //           'rgba(255, 159, 64, 1)'\
+    //         ],\
+    //         borderWidth: 1\
+    //       \}]\
+    //     \},\
+    //     options: \{\
+    //       title: \{\
+    //         display: true,\
+    //         text: 'Nordic Artists at the MoMa',\
+    //         fontSize: 32\
+    //       \}\
+    //\
+    // \}\
+    //   \})\}\
+\
+      async function nordicChart()\{\
+      await getData();\
+      const ctx = document.getElementById('nordicNationalities').getContext('2d');\
+      const nordicCharts = new Chart(ctx, \{\
+\
+\
+        type: 'doughnut',\
+        data: \{\
+          labels: ['Swedish','Norwegian','Finnish','Danish','Icelandic'],\
+          datasets: [\{\
+            label: 'Nordic Artists at the MomA',\
+            data: nordicArray,\
+            backgroundColor: [\
+              'rgba(255, 99, 132, 0.2)',\
+              'rgba(54, 162, 235, 0.2)',\
+              'rgba(255, 206, 86, 0.2)',\
+              'rgba(75, 192, 192, 0.2)',\
+              'rgba(153, 102, 255, 0.2)'\
+            ],\
+            borderColor: [\
+              'rgba(255, 99, 132, 1)',\
+              'rgba(54, 162, 235, 1)',\
+              'rgba(255, 206, 86, 1)',\
+              'rgba(75, 192, 192, 1)',\
+              'rgba(153, 102, 255, 1)'\
+            ],\
+            borderWidth: 1\
+          \}]\
+        \},\
+        options: \{\
+          title: \{\
+            display: true,\
+            text: 'Nordic Artists at the MoMa',\
+            fontSize: 32\
+          \}\
+\
+    \}\
+      \})\}\
+\
+      async function getData() \{\
+\
+        // a. These are arrays to store the amount of Nationalities\
+        let nationalityArray = [];\
+        let swedish = [];\
+        let norwegian = [];\
+        let finnish = [];\
+        let danish = [];\
+        let icelandic = [];\
+        let rest = [];\
+\
+        // 1. Call/fetch the artists.csv file, store it in a variable to get the text data\
+        const response = await fetch('artists.csv');\
+        const data = await response.text();\
+\
+        // 2. The data is set up like a table just in a sentence layout. To organize each sentence into a row, I have to split the sentences. The way to determine the end of a sentence is by a line break "\\n"\
+\
+        const table = data.split('\\n');\
+\
+        // 3. I don't need the first row of data. The method to remove the first row is using '.slice'.\
+        const rows = table.slice(1);\
+\
+        // 4. I want to pull from each row the artist, nationality, and gender. To do this I'll need to discern each entry by a comma, and call each item by number since it is in an array. This all occurs through iterating through each row called 'rows'.\
+        rows.forEach(rows => \{\
+          const row = rows.split(',');\
+          const number = row[0];\
+          const artist = row[1];\
+          const nationality = row[2];\
+          const gender = row[3];\
+\
+          //const nationalityTwo = nationality.replace('/ /g', 'null');\
+\
+          nationalityArray.push(nationality);\
+\
+        \});\
+        for (let i = 0; i < nationalityArray.length; i++) \{\
+          if (nationalityArray[i] == "Swedish") \{\
+            swedish.push(i);\
+          \}\
+          if (nationalityArray[i] == "Norwegian") \{\
+            norwegian.push(i);\
+          \}\
+          if (nationalityArray[i] == "Finnish") \{\
+            finnish.push(i);\
+          \}\
+          if (nationalityArray[i] == "Danish") \{\
+            danish.push(i);\
+          \}\
+          if (nationalityArray[i] == "Icelandic") \{\
+            icelandic.push(i);\
+          \} else \{\
+            rest.push(i);\
+          \}\
+        \};\
+\
+        const nordic = swedish.length + norwegian.length + finnish.length + danish.length + icelandic.length;\
+        const noNordic = rest.length;\
+        momaArray.push(nordic);\
+        momaArray.push(noNordic);\
+\
+        nordicArray.push(swedish.length);\
+        nordicArray.push(norwegian.length);\
+        nordicArray.push(finnish.length);\
+        nordicArray.push(danish.length);\
+        nordicArray.push(icelandic.length);\
+\
+      \};\
+      console.log(nordicArray.length);\
+      console.log(momaArray.length);\
+\
+\
+\
+  </script>\
+</body>\
+\
+</html>\
+}

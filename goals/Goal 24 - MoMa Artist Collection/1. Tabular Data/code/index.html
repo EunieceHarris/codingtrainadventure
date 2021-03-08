@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tabular Data</title>
+</head>
+
+<body>
+
+  <script>
+    getData();
+
+    async function getData() {
+
+      // 1. Call/fetch the artists.csv file, store it in a variable to get the text data
+      const response = await fetch('artists.csv');
+      const data = await response.text();
+
+      // 2. The data is set up like a table just in a sentence layout. To organize each sentence into a row, I have to split the sentences. The way to determine the end of a sentence is by a line break "\n"
+
+      const table = data.split('\n');
+
+      // 3. I don't need the first row of data. The method to remove the first row is using '.slice'.
+      const rows = table.slice(1);
+
+      // 4. I want to pull from each row the artist, nationality, and gender. To do this I'll need to discern each entry by a comma, and call each item by number since it is in an array. This all occurs through iterating through each row called 'rows'. 
+      rows.forEach(rows => {
+        const row = rows.split(',');
+        const artist = row[1];
+        const nationality = row[3];
+        const gender = row[4];
+        console.log(artist, nationality, gender);
+      });
+
+    }
+  </script>
+</body>
+
+</html>
