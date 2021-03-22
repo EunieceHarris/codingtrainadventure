@@ -1,0 +1,13 @@
+function randomWholeNum() {
+
+  // Only change code below this line
+  var rando;
+  var num = Math.random() * 10;
+  rando = Math.floor(num);
+  if(rando >= 0 || rando <= 9){
+    return rando;
+  }
+  else {
+    randomWholeNum();
+  }
+}

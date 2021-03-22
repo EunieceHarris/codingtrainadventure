@@ -1,0 +1,12 @@
+function checkObj(obj, checkProp) {
+  // Only change code below this line
+  gift: "pony";
+  pet: "kitten";
+  bed: "sleigh";
+  city: "Seattle";
+  if (obj.hasOwnProperty(checkProp)){
+    return obj[checkProp];
+  }
+  return "Not Found";
+  // Only change code above this line
+}

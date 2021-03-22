@@ -1,0 +1,8 @@
+function randomRange(myMin, myMax) {
+  // Only change code below this line
+  var rando = Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+  return rando;
+  // Only change code above this line
+}
+
+randomRange(9, 19);
