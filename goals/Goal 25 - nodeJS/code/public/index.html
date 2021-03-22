@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Server Side Programming with node.js</title>
+</head>
+
+<body>
+  <h1>Data Selfie App</h1>
+  <p>Hej!</p>
+  <p>Latitude: <span id='lat'></span>&deg;</p>
+  <p>Longitude: <span id='lon'></span>&deg;</p>
+  <button id="submit">submit</button>
+
+  <script type="text/javascript">
+
+  let lat, lon;
+    const button = document.getElementById('submit');
+    button.addEventListener('click', async event => {
+      const data = {lat, lon};
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      };
+      const response = await fetch('/api', options);
+      const jsonData = await response.json();
+      console.log(jsonData);
+    });
+
+    if ('geolocation' in navigator) {
+      console.log('geolocation available');
+      navigator.geolocation.getCurrentPosition(async position => {
+
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        document.getElementById('lat').innerHTML = lat;
+        document.getElementById('lon').innerHTML = lon;
+
+      });
+    } else {
+      console.log('geolocation not available');
+    }
+  </script>
+</body>
+
+</html>
